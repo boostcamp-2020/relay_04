@@ -40,3 +40,41 @@
 <img src='./image/layout.jpeg' width='1080px'>
 
 ## 관련 라이브러리 및 API
+
+### 인공지능 기반 한국어 비속어 필터링 오픈소스 API
+
+> https://github.com/hjh010501/appropriate-filetering
+
+인공지능을 기반으로 하여 문장의 비속어를 파악하는 HTTP API <br>
+음소, 음절별로 문장을 분해하여 인공지능을 통해 비속어 여부를 분석 할 수 있습니다.
+
+### Python 한국어 LNP를 위한 패키지
+
+> https://konlpy-ko.readthedocs.io/ko/v0.4.3/
+
+java 기반의 형태소 분석기를 파이썬에서 사용할 수 있게 해주는 패키지
+
+사용 예제 : [파이썬_konlpy_kkma(꼬꼬마) 형태소 분석기 사전 튜닝](https://cromboltz.tistory.com/18)
+
+### 카카오 형태소 분석기
+
+> https://github.com/kakao/khaiii
+
+데이터(혹은 기계학습) 기반의 알고리즘을 이용하여 분석하여 형태소를 분석한다.
+
+### 은전한닢 : 오픈소스 한국어 형태소 분석기
+
+> http://eunjeon.blogspot.com/
+
+은전한닢 프로젝트는 “검색에서 쓸만한 오픈소스 한국어 형태소 분석기를 만들자!” 라는 생각으로 시작하게 된 프로젝트입니다.
+‘검색에서 쓸만한’이란 목표 때문에 다음의 두 가지 항목에 초점을 맞춰 개발을 진행하였습니다.
+- 검색 엔진 색인기에서 쓸 수 있는 적당한 품질과 속도
+- 자유로운 라이센스
+
+Python에 은전한닢 연동하기 위한 인터페이스 [링크](https://github.com/koshort/pyeunjeon)
+
+---
+
+### 읽어보면 좋을 자료
+- [게시글 필터링 - 당근마켓](https://medium.com/daangn/%EB%94%A5%EB%9F%AC%EB%8B%9D%EC%9C%BC%EB%A1%9C-%EB%8F%99%EB%84%A4%EC%83%9D%ED%99%9C-%EA%B2%8C%EC%8B%9C%EA%B8%80-%ED%95%84%ED%84%B0%EB%A7%81%ED%95%98%EA%B8%B0-263cfe4bc58d)
+- [LSTM으로 글 분류하기](https://bangseogs.tistory.com/96)
