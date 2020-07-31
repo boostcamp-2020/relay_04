@@ -29,7 +29,9 @@
 <br>
 
 ### Flow chart
+기능
 <img src='https://user-images.githubusercontent.com/43198553/89028122-afeea900-d366-11ea-994e-e7766a33e45e.jpg' width='400px'>
+관리자
 <img src='https://user-images.githubusercontent.com/43198553/89028115-ae24e580-d366-11ea-88db-e7f018d748c8.jpg' width='400px'>
 
 
