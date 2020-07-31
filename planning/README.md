@@ -2,6 +2,8 @@
 
 > [라떼 챌린지](https://github.com/boostcamp-2020/relay_04/blob/master/planning/Latte_challenge.md) 이후 결정된 아이러브스쿨 / 다모임 리뉴얼 -> 기능 기획
 
+![아이러브스쿨](https://user-images.githubusercontent.com/43198553/89040405-b2f59380-d37e-11ea-98d9-496d045f6228.png)
+
 ### 서비스 이름 정하기
 - 서비스 이름 : 다시모임
 - 이름 후보 : 향수, 모임사랑, **다시모임**, 또모임
