@@ -27,8 +27,7 @@
 ![flow_chart](https://user-images.githubusercontent.com/61968474/89038562-8db35600-d37b-11ea-9a56-a2d1beee0b68.PNG)
 
 
-
-## Data set
+## 데이터 구조 예시
 
 - 출신 학교(초/중/고/대) -> 친구 찾기 시 체크박스로 선택(동문/동창만 찾기도 가능)
 - 나이
