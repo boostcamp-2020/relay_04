@@ -1,6 +1,6 @@
 # 릴레이 프로젝트 <다시모임> 기획을 위한 회의록
 
-> 아이러브스쿨 / 다모임 리뉴얼 -> 기능 기획
+> [라떼 챌린지](https://github.com/boostcamp-2020/relay_04/blob/master/planning/Latte_challenge.md) 이후 결정된 아이러브스쿨 / 다모임 리뉴얼 -> 기능 기획
 
 ### 서비스 이름 정하기
 - 서비스 이름 : 다시모임

@@ -50,6 +50,7 @@
 ## 예상 레이아웃 및 프로토타입
 
 <img src='./image/layout.jpeg' width='1080px'>
+<img width="942" alt="프로토타입" src="https://user-images.githubusercontent.com/43198553/89028814-06101c00-d368-11ea-83d1-d9e031c0bd0a.png">
 
 🔍 [프로토타입 view](https://ovenapp.io/view/GRWnxhRZuqkOCsTcWmP2kScFC3Yna83i/QkwzT)
 
