@@ -22,10 +22,12 @@
 ## Flow chart  
 ![image](https://user-images.githubusercontent.com/46911854/89036966-abcb8700-d378-11ea-8dc1-4dae62008517.png)  
 
-## 예상 UI
+## 예상 UI 및 프로토타입  
 
-![image](https://user-images.githubusercontent.com/43700074/89024829-b843e580-d360-11ea-9978-943d8bae130c.png)
+![image](https://user-images.githubusercontent.com/43700074/89024829-b843e580-d360-11ea-9978-943d8bae130c.png)  
 
+![image](https://user-images.githubusercontent.com/46911854/89044360-d02d6080-d384-11ea-8fa2-31ae8f8c03a2.png)  
+<span>Photo by <a href="https://unsplash.com/@beschtephotography?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Lukas Eggers</a> on <a href="https://unsplash.com/s/photos/party-selfie?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>  
 
 ## 관련 라이브러리 및 API
 
