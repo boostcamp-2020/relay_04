@@ -26,8 +26,6 @@
 - 게시글을 읽고 부적합한 글인지 아닌지 서버에 결과값을 보내고 서버는 `부적합 게시글 DB`에서 제거한다.
 - 부적합한 글이었을 경우 서버는 게시글을 작성한 사용자에게 `경고` 횟수를 증가시킨다.
 
-<img src='./image/layout.jpeg' width='1080px'>
-
 ### 부적합한 단어를 모은 Data set `dataset/`
 - abuse : 비속어
 - fraud : 사행성과 관련된 단어
@@ -39,5 +37,6 @@
 
 ## 예상 UI
 
+<img src='./image/layout.jpeg' width='1080px'>
 
 ## 관련 라이브러리 및 API
