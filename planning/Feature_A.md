@@ -23,21 +23,34 @@
 - 사용자가 게시글을 작성하면 게시글 DB에 업로드하고 게시글의 내용을 `형태소 분석`한다.
 - 만약 분석된 결과에 미리 지정해 둔 금지어가 일정 비율 존재한다면 `부적합 게시글 DB`에 게시글의 ID를 추가한다.
 - 관리자는 관리자 페이지에서 `부적합 게시글 DB`에 있는 게시글의 목록을 확인할 수 있다.
-- 게시글을 읽고 부적합한 글인지 아닌지 서버에 결과값을 보내고 서버는 `부적합 게시글 DB`에서 제거한다.
+- 게시글을 읽고 부적합한 글인지 아닌지 서버에 결과값을 보내고 서버는 `게시글 DB`에서 제거한다.
 - 부적합한 글이었을 경우 서버는 게시글을 작성한 사용자에게 `경고` 횟수를 증가시킨다.
+
+<br>
+
+### Flow chart
+<img src='https://user-images.githubusercontent.com/43198553/89028122-afeea900-d366-11ea-994e-e7766a33e45e.jpg' width='400px'>
+<img src='https://user-images.githubusercontent.com/43198553/89028115-ae24e580-d366-11ea-88db-e7f018d748c8.jpg' width='400px'>
+
+
 
 ### 부적합한 단어를 모은 [Data set](https://github.com/boostcamp-2020/relay_04/tree/master/planning/dataset)
 - `A_abuse` : 비속어
 - `A_fraud` : 사행성과 관련된 단어
 
 ### 예상 문제점
-- 금칙어 기반 라이브러리의 경우 우회 욕설 타이핑이 가능하다. [참고](https://www.youtube.com/watch?v=K4nU7yXy7R8)
+- 금칙어 기반 라이브러리의 경우 우회 욕설 타이핑이 가능하다. [참고 영상](https://www.youtube.com/watch?v=K4nU7yXy7R8)
 - 오타, 의도가 다르게 사용한 단어로 게시글이 추출될 수 있다.
 - 데이터 셋에 담을 단어를 결정하는데 애매하거나 주관적인 부분이 있다.
 
-## 예상 UI
+<br>
+
+## 예상 레이아웃 및 프로토타입
 
 <img src='./image/layout.jpeg' width='1080px'>
+
+🔍 [프로토타입 view](https://ovenapp.io/view/GRWnxhRZuqkOCsTcWmP2kScFC3Yna83i/QkwzT)
+
 
 ## 관련 라이브러리 및 API
 
