@@ -1,8 +1,8 @@
-# 🏫 릴레이 프로젝트-04 <다시모임> 🏫
-![GitHub stars](https://img.shields.io/github/stars/boostcamp-2020/relay_04?style=social) ![GitHub pull requests](https://img.shields.io/github/issues-pr/boostcamp-2020/relay_04?color=red) ![GitHub issues](https://img.shields.io/github/issues/boostcamp-2020/relay_06)  
+# 🏫 릴레이 프로젝트-04 <다시모임> 🏫 ![GitHub stars](https://img.shields.io/github/stars/boostcamp-2020/relay_04?style=social) 
 
 ### 예상 사용자
-**동문**을 찾고 싶어하는 **40대 이상**, 특히 동문과 함께 **모임을 만들어 나가고 싶은** 사람
+- **동문**을 찾고 싶어하는 **40대 이상**
+- 특히 동문과 함께 **모임을 만들어 나가고 싶은** 사람
 
 
 ## AI 기반 기능
@@ -20,6 +20,8 @@
 ### [C. 테이블 데이터](https://github.com/boostcamp-2020/relay_04/blob/master/planning/Feature_C.md)
 🗣 **설문조사를 통해 관심사와 성향을 파악하고, 비슷한 관심사를 가진 사람들을 추천해준다!**
 
+<br>
+
 ## 추가적으로 구현해야 할 공통 기능
 
 기능 | 설명 | 참고
@@ -31,7 +33,10 @@
 모임 생성 기능 | 동문 게시판 내 새로운 모임 게시판 생성 |
 관리자 페이지 | 회원 관리 및 게시글 관리를 위한 관리자 탭 |
 
+<br>
+
 ## 예상 데이터베이스 스키마
+> 개발 시간 단축을 위해 짠 스키마인데 필요에 따라 수정하셔도 좋습니다 :)
 
 ### table : user (회원정보)
 key | attribue name | type | description
@@ -74,6 +79,7 @@ PK | ID | int | 회원 고유 번호
 ---
 
 ### 👥 <다시모임>을 거쳐간 캠퍼들을 적어주세요 - ! 🔥
+> 테이블 형식으로 적어주시면 감사하겠습니다. 캠퍼 깃허브도 링크로 연결 부탁드려요!
 
 **`프로젝트 기획`**
 
@@ -90,3 +96,7 @@ PK | ID | int | 회원 고유 번호
 **`기능 B 구현`**
 
 **`기능 C 구현`**
+
+<br>
+
+> 2020 부스트캠프 챌린지 릴레이 프로젝트 04
