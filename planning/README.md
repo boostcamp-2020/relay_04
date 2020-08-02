@@ -53,6 +53,7 @@ PK, FK | ID | int | 회원 고유 번호
 key | attribue name | type | description
 --- | --- | --- | ---
 PK, FK | ID | int | 회원 고유 번호
+| | TYPE | int |  테스트 결과 유형
 
 ### table : graduated (출신 학교)
 key | attribue name | type | description
@@ -68,7 +69,7 @@ key | attribue name | type | description
 PK | ID | int | 회원 고유 번호
 | | NAME | str | 학교 이름
 | | USER_COUNT | int | 소속된 회원 수
-| | BOARD_COUNT
+| | BOARD_COUNT | int | 해당 학교 내 하위 게시판 수
 
 ---
 
