@@ -31,11 +31,48 @@
 모임 생성 기능 | 동문 게시판 내 새로운 모임 게시판 생성 |
 관리자 페이지 | 회원 관리 및 게시글 관리를 위한 관리자 탭 |
 
+## 예상 데이터베이스 스키마
 
+### table : user (회원정보)
+key | attribue name | type | description
+--- | --- | --- | ---
+PK | ID | int | 회원 고유 번호
+| | USERID | str | 회원 ID
+| | NAME | str | 회원 이름
+| | RESISTER_DATE | date | 가입일자
+| | GENDER | str | 성별
+
+### table : image (회원 사진)
+key | attribue name | type | description
+--- | --- | --- | ---
+PK, FK | ID | int | 회원 고유 번호
+| | FACE | str | 회원의 대표 얼굴 좌표
+| | FACE_POS | array | 얼굴 좌표를 담은 배열
+
+### table : type (테스트 결과)
+key | attribue name | type | description
+--- | --- | --- | ---
+PK, FK | ID | int | 회원 고유 번호
+
+### table : graduated (출신 학교)
+key | attribue name | type | description
+--- | --- | --- | ---
+PK, FK | ID | int | 회원 고유 번호
+FK | UNIV | int | 출신 대학의 고유 번호
+FK | HIGH | int | 출신 고등학교의 고유 번호
+
+### table : school (고등학교 및 대학교 정보)
+
+key | attribue name | type | description
+--- | --- | --- | ---
+PK | ID | int | 회원 고유 번호
+| | NAME | str | 학교 이름
+| | USER_COUNT | int | 소속된 회원 수
+| | BOARD_COUNT
 
 ---
 
-### 👥 <다시모임>을 거쳐간 캠퍼들을 적어주세요 - !
+### 👥 <다시모임>을 거쳐간 캠퍼들을 적어주세요 - ! 🔥
 
 **`프로젝트 기획`**
 
