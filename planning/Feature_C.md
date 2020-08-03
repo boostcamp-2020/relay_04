@@ -50,8 +50,10 @@
 
 > http://surpriselib.com/
 
-추천시스템을 위한 Python 라이브러리
+추천시스템을 위한 Python 라이브러리로 사용자 간의 유사성에 기반하여 rating을 예측하는 방법
+
 - [활용 예제 : Python Surprise lib에서 제공하는 추천 알고리즘을 코드와 함께 살펴보자](https://danthetech.netlify.app/DataScience/how-does-recommendation-algorithms-work-using-surpriselib)
+- [서프라이즈 라이브러리를 활용한 추천시스템 구축 및 검증](https://antilibrary.org/2086)
 
 
 ## 참고자료

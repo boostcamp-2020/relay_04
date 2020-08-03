@@ -9,16 +9,16 @@
 > 각 기능은 기능별 설명을 참고해주세요 🙌
 
 ### [A. 자연어 처리](https://github.com/boostcamp-2020/relay_04/blob/master/planning/Feature_A.md)
-🗣 **게시글 형태소 분석을 통해 부적합한 게시글을 판단하고 삭제한다!**
+🗣 **게시글 형태소 분석을 통해 부적합한 게시글을 판단하고 삭제하는 기능**
 
 
 
 ### [B. 영상 처리](https://github.com/boostcamp-2020/relay_04/blob/master/planning/Feature_B.md)
-🗣 **동창들이 같이 찍은 사진에서 인물 태그를 자동으로 생성한다!**
+🗣 **동창들이 같이 찍은 사진에서 인물 태그를 자동으로 생성하는 기능**
     
                                      
 ### [C. 테이블 데이터](https://github.com/boostcamp-2020/relay_04/blob/master/planning/Feature_C.md)
-🗣 **설문조사를 통해 관심사와 성향을 파악하고, 비슷한 관심사를 가진 사람들을 추천해준다!**
+🗣 **설문조사를 통해 관심사와 성향을 파악하고, 비슷한 관심사를 가진 사람들을 추천하는 기능**
 
 <br>
 
@@ -67,7 +67,7 @@ PK, FK | ID | int | 회원 고유 번호
 
 key | attribute name | type | description
 --- | --- | --- | ---
-PK | ID | int | 회원 고유 번호
+PK | ID | int | 학교 고유 번호
 | | NAME | varchar | 학교 이름
 | | USER_COUNT | int | 소속된 회원 수
 | | BOARD_COUNT | int | 해당 학교 내 하위 게시판 수
