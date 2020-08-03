@@ -1,4 +1,4 @@
-# 🏫 릴레이 프로젝트-04 <다시모임> 🏫 ![GitHub stars](https://img.shields.io/github/stars/boostcamp-2020/relay_04?style=social) 
+# 🏫 릴레이 프로젝트-04 <다시모임> 🏫 ![GitHub stars](https://img.shields.io/github/stars/boostcamp-2020/relay_04) 
 
 ### 예상 사용자
 - **동문**을 찾고 싶어하는 **40대 이상**
@@ -39,40 +39,36 @@
 > 개발 시간 단축을 위해 짠 스키마인데 필요에 따라 수정하셔도 좋습니다 :)
 
 ### table : user (회원정보)
-key | attribue name | type | description
+key | attribute name | type | description
 --- | --- | --- | ---
 PK | ID | int | 회원 고유 번호
-| | USERID | str | 회원 ID
-| | NAME | str | 회원 이름
+| | USERID | varchar | 회원 ID
+| | NAME | varchar | 회원 이름
 | | RESISTER_DATE | date | 가입일자
-| | GENDER | str | 성별
+| | GENDER | varchar | 성별
+FK | UNIV | int | 출신 대학의 고유 번호
+FK | HIGH | int | 출신 고등학교의 고유 번호
 
 ### table : image (회원 사진)
-key | attribue name | type | description
+key | attribute name | type | description
 --- | --- | --- | ---
 PK, FK | ID | int | 회원 고유 번호
-| | FACE | str | 회원의 대표 얼굴 좌표
-| | FACE_POS | array | 얼굴 좌표를 담은 배열
+| | FACE | varchar | 회원의 대표 얼굴 좌표
+| | FACE_POS_X | varchar | 얼굴 X좌표를 담은 배열
+| | FACE_POS_Y | varchar | 얼굴 Y좌표를 담은 배열
 
-### table : type (테스트 결과)
-key | attribue name | type | description
+### table : test_result (친구추천을 위한 테스트 결과)
+key | attribute name | type | description
 --- | --- | --- | ---
 PK, FK | ID | int | 회원 고유 번호
 | | TYPE | int |  테스트 결과 유형
 
-### table : graduated (출신 학교)
-key | attribue name | type | description
---- | --- | --- | ---
-PK, FK | ID | int | 회원 고유 번호
-FK | UNIV | int | 출신 대학의 고유 번호
-FK | HIGH | int | 출신 고등학교의 고유 번호
-
 ### table : school (고등학교 및 대학교 정보)
 
-key | attribue name | type | description
+key | attribute name | type | description
 --- | --- | --- | ---
 PK | ID | int | 회원 고유 번호
-| | NAME | str | 학교 이름
+| | NAME | varchar | 학교 이름
 | | USER_COUNT | int | 소속된 회원 수
 | | BOARD_COUNT | int | 해당 학교 내 하위 게시판 수
 
@@ -99,4 +95,4 @@ PK | ID | int | 회원 고유 번호
 
 <br>
 
-> 2020 부스트캠프 챌린지 릴레이 프로젝트 04
+>  2020 부스트캠프 챌린지 릴레이 프로젝트 04
