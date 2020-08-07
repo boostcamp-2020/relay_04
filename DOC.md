@@ -50,7 +50,7 @@ id : [사용자 id] / pw : [사용자 pw]
 
 ```
 {
-    code : 200(성공) / 400(실패)
+    result : true(성공) / false(실패)
 }
 ```
 
@@ -70,7 +70,7 @@ id : [사용자 id] / pw : [사용자 pw]
 
 ```
 {
-    code : 200(성공) / 400(실패)
+    result : true(성공) / false(실패)
 }
 ```
 
@@ -90,7 +90,7 @@ id : [사용자 id] / title : [게시글 제목] / content : [게시글 내용]
 
 ```
 {
-    code : 200(성공) / 400(실패)
+    result : true(성공) / false(실패)
 }
 ```
 
@@ -114,17 +114,27 @@ page : [페이지 번호]
     postList : [
         {
             id : int(10)
-			writer : int(10)
-			title : varchar(30)
-			content : text
-			bad : bool
+            writer : {
+                id : int(10)
+                userid : varchar(20)
+                userpw : varchar(250)
+                bad : bool
+	    }
+            title : varchar(30)
+            content : text
+            bad : bool
         },
-		{
+        {
             id : int(10)
-			writer : int(10)
-			title : varchar(30)
-			content : text
-			bad : bool
+            writer : int(10){
+	        id : int(10)
+                userid : varchar(20)
+                userpw : varchar(250)
+                bad : bool
+	    }
+            title : varchar(30)
+            content : text
+            bad : bool
         }
     ]
 }
@@ -149,10 +159,15 @@ id : [게시글id]
     code : 200,
     post : {
         id : int(10)
-		writer : int(10)
-		title : varchar(30)
-		content : text
-		bad : bool
+        writer : {
+	    id : int(10)
+            userid : varchar(20)
+            userpw : varchar(250)
+            bad : bool
+	}
+        title : varchar(30)
+        content : text
+        bad : bool
     }
 }
 ```
