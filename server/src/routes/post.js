@@ -1,47 +1,56 @@
 const express = require('express');
 const safeCheck = require('../safeCheck').safeCheck;
 
+const Post = require('../../models/post');
+const User = require('../../models/user');
+
 const router = express.Router();
 
-router.get('/', async (req, res, next) => {
-  let body = req.body;
-  let id = body.id;
+router.get('/:id', async (req, res, next) => {
+  try {
+    const post = await Post.findOne({
+      where: {
+        id: req.params.id,
+      },
+      attributes: ['id', 'title', 'content', 'bad'],
+      include: [
+        {
+          model: User,
+          attributes: ['id', 'userid', 'bad'],
+        },
+      ],
+    });
 
-  // db 요청 부분
-  let result = { // db로부터 받은 object;
-    post : {
-      id : 1,
-      writer : {
-	      id : 1,
-        userid : "userid",
-        userpw : "userpw",
-        bad : false
-	    },
-      title : "title",
-      content : "content",
-      bad : false
-    }
+    return res.json(post);
+  } catch (error) {
+    console.error(error);
+    next(error);
   }
-
-  return res.json(result);
 });
 
-router.get('/write', async (req, res, next) => {
-  let body = req.body;
-  let userid = body.id;
-  let title = body.title;
-  let content = body.content;
+router.post('/write', async (req, res, next) => {
+  try {
+    const { userid, title, content } = req.body;
+    const testBadwords = ['멍멍', '왈왈'];
 
-  let content_test = '사용자가 게시글을 작성하면 게시글 DB에 업로드하고 게시글의 내용을 형태소 분석한다. 멍멍, 왈왈 등 비속어를 걸러낸다.';
-  let testBadwords = ['멍멍', '왈왈'];
-  let testRes = safeCheck(testBadwords, content_test);
-  if(testRes > 0)
-    console.log("불건전한 단어가 포함되어 있습니다.");
+    const bad = false;
+    // api 사용제한 때문에 막아놓음
+    // const bad = safeCheck(testBadwords, content) > 0 ? true : false;
 
-  // db 요청 부분
-  let result = { result : true }; // db로부터 받은 object;
+    await Post.create({
+      title,
+      content,
+      UserId: userid,
+      bad,
+    });
 
-  return res.json(result);
+    const result = { result: true };
+
+    return res.json(result);
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
 });
 
 module.exports = router;
