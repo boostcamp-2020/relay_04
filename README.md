@@ -52,6 +52,17 @@
 
 **`기능 A 구현`**
 
+| Frontend    | Backend     |
+| ----------- | ----------- |
+| [J008 강진구](https://github.com/xortm854) | [J007 강용범](https://github.com/icandoa) |
+| [J081 박승환](https://github.com/rolled-potatoes) | [J044 김성환](https://github.com/shkillo) |
+| [J082 박은식](https://github.com/qkrdmstlr3) | [J045 김영근](https://github.com/lacomaco) |
+|             | [J118 오지훈](https://github.com/hoo00nn) |
+|             | [J119 오해성](https://github.com/ohsolution) |
+|             | [J157 이주현](https://github.com/JuHyeon-Lee) |
+|             | [J194 조찬영](https://github.com/cyjo9603) |
+
+
 **`기능 B 구현`**
 
 **`기능 C 구현`**
