@@ -1,9 +1,13 @@
+const { sequelize } = require('../models');
+
 const app = require('./app');
 
 const PORT = process.env.PORT || 4000;
-
 app.set('port', PORT);
 
-app.listen(app.get('port'), () => {
-  console.log(`server is running on ${app.get('port')}`);
-});
+const handelAppStat = () => console.log(`server is running on ${app.get('port')}`);
+
+sequelize
+  .sync({ force: true })
+  .then(() => app.listen(app.get('port'), handelAppStat))
+  .catch((error) => console.log(error));
