@@ -1,0 +1,22 @@
+.viewText_main{
+    width: 100vw;
+    min-height: 800px;
+    min-height: 100vh;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .viewText_form{
+    margin-left: 30%;
+} */
+
+textarea{
+    width: 800px;
+    height: 400px;
+}
+
+viewText_text{
+    width : 600px;
+    height : 50px;
+}

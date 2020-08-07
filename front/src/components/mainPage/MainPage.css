@@ -1,0 +1,19 @@
+#MainPages_Buttons{
+    margin: auto;
+    margin-top : 100px;
+    width: 50%;
+}
+
+#MainPages_Buttons > div{
+    margin: auto;
+    margin-bottom: 10px;
+    width: 50%;
+    
+}
+
+.MainPages_button{
+    background-color: #5fa5E0;
+    width: 80%;
+    font-size: 15px; 
+    padding: 10px 10px;
+}

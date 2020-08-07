@@ -1,0 +1,16 @@
+@import "../../colors/index.css";
+
+#pagenation-warpper {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  /* margin: auto; */
+}
+.pagenation-unit {
+  /* font-size: 12px; */
+  border: 1px solid var(--gray4);
+  padding: 5px;
+}
+.pagenation-unit + .pagenation-unit {
+  margin-left: 15px;
+}

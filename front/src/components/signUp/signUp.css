@@ -1,0 +1,41 @@
+.signUp_form{
+  width: 400px;
+  height: 250px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translate(-50%, -50%);
+}
+
+.signUp_inputId,
+.signUp_inputPW,
+.signUp_inputPWCheck {
+  margin: 0 auto;
+  width: 300px;
+  height: 30px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.signUp_warning {
+  height: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: red;
+}
+
+.signUp_button {
+  margin: 0 auto;
+  width: 330px;
+  height: 40px;
+  border-radius: 7px;
+  border: none;
+  background-color: #3498DB;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+}

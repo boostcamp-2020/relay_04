@@ -1,0 +1,39 @@
+@import "../../colors/index.css";
+
+#postList-warpper {
+  position: relative;
+  /* display: flex; */
+}
+.postList-unit + .postList-unit {
+  margin-top: 20px;
+}
+.postList-unit {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--gray4);
+}
+
+main {
+  width: 100vh;
+  margin: 0 auto;
+}
+.postList-button {
+  background-color: var(--blue2);
+  margin: 0 5px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.postList-title {
+  border-top: 1px solid var(--gray4);
+  padding: 5px 0;
+  border-bottom: 2px solid var(--gray4);
+}
+.postList-write-button {
+  width: 100px;
+  height: 50px;
+  right: 50px;
+  bottom: 50px;
+  position: fixed;
+}

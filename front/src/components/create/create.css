@@ -1,0 +1,49 @@
+.create_form {
+  width: 450px;
+  height: 330px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #DFDFDF;
+  border-radius: 3px;
+}
+
+.create_titleInput,
+.create_textAreaInput {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 30px;
+  border: 1px solid gray;
+  height: 10px;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.create_textAreaInput {
+  height: 140px;
+  padding: 10px;
+  resize: none;
+}
+
+.create_warning {
+  height: 20px;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 10px;
+  color: red;
+}
+
+.create_button {
+  position: absolute;
+  bottom: 10px;
+  background-color: #3498DB;
+  color: white;
+  border: none;
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  right: 10px;
+  cursor: pointer;
+}
