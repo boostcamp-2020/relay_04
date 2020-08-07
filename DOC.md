@@ -48,7 +48,7 @@ id : [사용자 id] / pw : [사용자 pw]
 
 **RESPONSE**
 
-```json
+```
 {
     code : 200(성공) / 400(실패)
 }
@@ -68,7 +68,7 @@ id : [사용자 id] / pw : [사용자 pw]
 
 **RESPONSE**
 
-```json
+```
 {
     code : 200(성공) / 400(실패)
 }
@@ -88,7 +88,7 @@ id : [사용자 id] / title : [게시글 제목] / content : [게시글 내용]
 
 **RESPONSE**
 
-```json
+```
 {
     code : 200(성공) / 400(실패)
 }
@@ -108,7 +108,7 @@ page : [페이지 번호]
 
 **RESPONSE**
 
-```json
+```
 {
     code : 200,
     postList : [
@@ -144,7 +144,7 @@ id : [게시글id]
 
 **RESPONSE**
 
-```json
+```
 {
     code : 200,
     post : {
