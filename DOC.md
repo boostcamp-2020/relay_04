@@ -42,7 +42,7 @@ bad : bool
 
 [BASE_URL]/api/user/signup
 
-**REQUEST PARAMETER**
+**REQUEST BODY**
 
 id : [사용자 id] / pw : [사용자 pw]
 
@@ -62,7 +62,7 @@ id : [사용자 id] / pw : [사용자 pw]
 
 [BASE_URL]/api/user/signin
 
-**REQUEST PARAMETER**
+**REQUEST BODY**
 
 id : [사용자 id] / pw : [사용자 pw]
 
@@ -104,7 +104,7 @@ id : [사용자 id] / title : [게시글 제목] / content : [게시글 내용]
 
 **REQUEST PARAMETER**
 
-page : [페이지 번호]
+page : [페이지 번호] ---> 기능 보류
 
 **RESPONSE**
 
@@ -113,24 +113,24 @@ page : [페이지 번호]
     postList : [
         {
             id : int(10)
-            writer : {
+            User : {
                 id : int(10)
                 userid : varchar(20)
                 userpw : varchar(250)
                 bad : bool
-	    }
+	        }
             title : varchar(30)
             content : text
             bad : bool
         },
         {
             id : int(10)
-            writer : int(10){
-	        id : int(10)
+            User : {
+	            id : int(10)
                 userid : varchar(20)
                 userpw : varchar(250)
                 bad : bool
-	    }
+	        }
             title : varchar(30)
             content : text
             bad : bool
@@ -145,11 +145,7 @@ page : [페이지 번호]
 
 **URL**
 
-[BASE_URL]/api/post/
-
-**REQUEST PARAMETER**
-
-id : [게시글id]
+[BASE_URL]/api/post/[게시글id]
 
 **RESPONSE**
 
@@ -157,12 +153,12 @@ id : [게시글id]
 {
     post : {
         id : int(10)
-        writer : {
-	    id : int(10)
+        User : {
+	        id : int(10)
             userid : varchar(20)
             userpw : varchar(250)
             bad : bool
-	}
+	    }
         title : varchar(30)
         content : text
         bad : bool
