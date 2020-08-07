@@ -82,7 +82,7 @@ id : [사용자 id] / pw : [사용자 pw]
 
 [BASE_URL]/api/post/write
 
-**REQUEST PARAMETER**
+**REQUEST BODY**
 
 id : [사용자 id] / title : [게시글 제목] / content : [게시글 내용]
 
