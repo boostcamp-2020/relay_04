@@ -40,7 +40,7 @@ bad : bool
 
 **URL**
 
-[BASE_URL]/signup
+[BASE_URL]/api/user/signup
 
 **REQUEST PARAMETER**
 
@@ -60,7 +60,7 @@ id : [사용자 id] / pw : [사용자 pw]
 
 **URL**
 
-[BASE_URL]/signin
+[BASE_URL]/api/user/signin
 
 **REQUEST PARAMETER**
 
@@ -80,7 +80,7 @@ id : [사용자 id] / pw : [사용자 pw]
 
 **URL**
 
-[BASE_URL]/savePost
+[BASE_URL]/api/post/write
 
 **REQUEST PARAMETER**
 
@@ -100,7 +100,7 @@ id : [사용자 id] / title : [게시글 제목] / content : [게시글 내용]
 
 **URL**
 
-[BASE_URL]/getPostList
+[BASE_URL]/api/posts/
 
 **REQUEST PARAMETER**
 
@@ -136,7 +136,7 @@ page : [페이지 번호]
 
 **URL**
 
-[BASE_URL]/getPost
+[BASE_URL]/api/post/
 
 **REQUEST PARAMETER**
 
