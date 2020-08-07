@@ -8,6 +8,6 @@ app.set('port', PORT);
 const handelAppStat = () => console.log(`server is running on ${app.get('port')}`);
 
 sequelize
-  .sync({ force: true })
+  .sync({ force: false })
   .then(() => app.listen(app.get('port'), handelAppStat))
   .catch((error) => console.log(error));

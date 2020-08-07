@@ -1,27 +1,52 @@
 const express = require('express');
+const bcrypt = require('bcrypt');
+
+const User = require('../../models/user');
 
 const router = express.Router();
 
-router.get('/signup', async (req, res, next) => {
-  let body = req.body;
-  let userid = body.id;
-  let userpw = body.pw;
+router.post('/signup', async (req, res, next) => {
+  try {
+    const { id, pw } = req.body;
 
-  // db 요청 부분
-  let result = { result : true }; // db로부터 받은 object;
-  
-  return res.json(result);
+    const hashedPassword = await bcrypt.hash(pw, 12);
+
+    await User.create({
+      userid: id,
+      userpw: hashedPassword,
+      bad: false,
+    });
+
+    const result = { result: true };
+
+    return res.json(result);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
 });
 
-router.get('/signin', async (req, res, next) => {
-  let body = req.body;
-  let userid = body.id;
-  let userpw = body.pw;
+// 아직 passpost 로 세션-쿠키 기능 x
+router.post('/signin', async (req, res, next) => {
+  try {
+    const { id, pw } = req.body;
+    const user = await User.findOne({
+      where: {
+        userid: id,
+      },
+    });
 
-  // db 요청 부분
-  let result = { result : true }; // db로부터 받은 object;
+    const isComparePassword = await bcrypt.compare(pw, user.userpw);
 
-  return res.json(result);
+    if (isComparePassword) {
+      const result = { result: true };
+      return res.json(result);
+    }
+    return res.status(402).send('입력한 비밀번호가 맞지 않습니다.');
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
 });
 
 module.exports = router;
