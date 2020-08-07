@@ -110,7 +110,6 @@ page : [페이지 번호]
 
 ```
 {
-    code : 200,
     postList : [
         {
             id : int(10)
@@ -156,7 +155,6 @@ id : [게시글id]
 
 ```
 {
-    code : 200,
     post : {
         id : int(10)
         writer : {
