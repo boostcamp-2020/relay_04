@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import './create.css';
+import { useHistory } from 'react-router-dom';
+
+import { writePostAPI } from '../../api';
+
+import { useSelector } from 'react-redux';
 
 function Create() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [warning, setWarning] = useState('');
+  const history = useHistory();
+  const {id} = useSelector((state) => state.user.user);
 
-  const handleCreate = (e) => {
+  const handleCreate = async (e) => {
     e.preventDefault();
     if(title === '') {
       setWarning('제목을 입력해 주십시오');
@@ -16,7 +23,14 @@ function Create() {
       setWarning('내용을 입력해 주십시오');
       return;
     }
-    setWarning('')
+
+    const response = await writePostAPI({
+      id, title, content
+    });
+    if (response.error) setWarning('');
+    else {
+      history.push('/post');
+    }
   }
 
   return(

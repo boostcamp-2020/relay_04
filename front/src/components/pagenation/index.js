@@ -1,10 +1,12 @@
 import React from "react";
 import "./pagenation.css";
 
+import { Link } from 'react-router-dom';
+
 function unit(startPosition, endPosition) {
   const arr = [];
   for (let i = startPosition; i <= endPosition; i++) {
-    arr.push(<a className="pagenation-unit" href="#">{i}</a>);
+    arr.push(<Link key={`${i}page`} className="pagenation-unit" to="#">{i}</Link>);
   }
   return arr;
 }

@@ -19,6 +19,10 @@ module.exports = class User extends Model {
           type: DataTypes.BOOLEAN,
           allowNull: false,
         },
+        authority: {
+          type: DataTypes.BOOLEAN,
+          allowNull: false
+        }
       },
       {
         modelName: 'User',

@@ -28,14 +28,51 @@ router.get('/:id', async (req, res, next) => {
   }
 });
 
+router.post('/update/:id', async (req, res, next) => {
+  try{
+    await Post.update({
+      bad: false
+    }, {
+      where: {
+        id: req.params.id
+      }
+    })
+
+    const result = { result: true }
+
+    return res.json(result);
+
+  } catch(error) {
+    console.error(error);
+    next(error);
+  }
+})
+
+router.delete('/:id', async (req, res, next) => {
+  try{
+    await Post.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+
+    const result = { result: true};
+
+    return res.json(result);
+  } catch(error) {
+    console.error(error);
+    next(error);
+  }
+})
+
 router.post('/write', async (req, res, next) => {
   try {
     const { userid, title, content } = req.body;
-    const testBadwords = ['멍멍', '왈왈'];
+    const testBadwords = ['멍멍', '왈왈', '씨발', '병신'];
 
     const bad = false;
     // api 사용제한 때문에 막아놓음
-    // const bad = safeCheck(testBadwords, content) > 0 ? true : false;
+    //const bad = safeCheck(testBadwords, content) > 0 ? true : false;
 
     await Post.create({
       title,

@@ -1,19 +1,26 @@
+@import "../../colors/index.css";
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
 header{
   /* background-image : url('banner1.jpg') !important; */
   background-size: 1700px 500px;
   background-position: left center;
-  height : 200px;
+  height : 100px;
   text-decoration: none;
 }
+
 a{
   text-decoration: none;
+  color: var(--black);
 }
+
 .title{
   font-size: 60px;
   text-align: center;
   padding-top : 40px;
   margin-bottom: 0px;
   text-decoration: none;
+  font-family: 'Jua', sans-serif;
 }
 
 #right_select{
@@ -23,4 +30,16 @@ a{
   padding-left: 20px;
   list-style-type: none;
   list-style: none;
+}
+.button{
+  position: absolute;
+  right: 100px;
+  background-color: var(--deepBrown);
+  width: 150px;
+  height: 30px;
+  border: none;
+  border-radius: 3px;
+  font-size: 18px;
+  color: var(--black);
+  cursor: pointer;
 }
