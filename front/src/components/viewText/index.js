@@ -1,46 +1,33 @@
-import React, { useState } from 'react';
+import React, {useEffect} from 'react';
 import './viewText.css';
+import { Link, useParams } from 'react-router-dom';
 
-class viewText extends React.Component {
-    constructor() {
-      super();
-      this.state = {
-        value: 'Please write an essay about your favorite DOM element.'
-      };
-      this.title = {
-        value : "First Text"
-      }
-  
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-    }
-  
-    handleChange(event) {
-      this.setState({value: event.target.value});
-    }
-  
-    handleSubmit(event) {
-      alert('An essay was submitted: ' + this.state.value);
-      event.preventDefault();
-    }
-  
-    render() {
-      return (
-        <div className = "viewText_main">
-          <form className = "viewText_form" onSubmit={this.handleSubmit}>
-            <p>
-              <label> 제목: 
-                <input className = "viewText_text" type = "text" name="title" value = {this.title.value}></input>
-              </label>
-            </p>
-            <p>
-              <textarea value={this.state.value} />
-            </p>
-            <input type="submit" value="Submit" />
-          </form>
-        </div>
-      );
-    }
-  }
+import { loadPostAPI } from '../../api';
 
-  export default viewText;
+import {useDispatch, useSelector} from 'react-redux';
+import * as actions from '../../redux/actions';
+
+function ViewText()  {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { post } = useSelector((state) => state.post);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await loadPostAPI(id);
+      dispatch(actions.loadPost(response.data));
+    }
+    fetchData();
+  }, [dispatch, id]);
+    
+  return (
+    <div className = "viewText_main">
+      <div className="viewText_back"><Link to='/post'> 뒤로가기 </Link></div>
+      <div className="viewText_title">{post.title}</div>
+      <div className="viewText_writer">{post?.User?.userid}</div>
+      <div className="viewText_content">{post.content}</div>
+    </div>
+  );
+}
+
+export default ViewText;

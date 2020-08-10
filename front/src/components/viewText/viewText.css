@@ -1,22 +1,44 @@
 .viewText_main{
-    width: 100vw;
-    min-height: 800px;
-    min-height: 100vh;
+    width: 600px;
+    height: 500px;
     /* background-color: aqua; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 /* .viewText_form{
     margin-left: 30%;
 } */
 
-textarea{
-    width: 800px;
-    height: 400px;
+.viewText_back a {
+    color: var(--deepBrown);
+    font-weight: bold;
 }
 
-viewText_text{
-    width : 600px;
-    height : 50px;
+.viewText_title{
+    width: 400px;
+    height: 20px;
+    border: 1px solid var(--black);
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.viewText_writer {
+    width: 400px;
+    margin: 0 auto;
+    color: var(--red);
+    font-weight: bold;
+}
+
+.viewText_content{
+    padding: 10px;
+    width: 400px;
+    height: 300px;
+    border: 1px solid var(--black);
+    margin: 0 auto;
+    border-radius: 10px;
 }

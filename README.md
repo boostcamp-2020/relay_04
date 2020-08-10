@@ -61,6 +61,7 @@
 |             | [J119 오해성](https://github.com/ohsolution) |
 |             | [J157 이주현](https://github.com/JuHyeon-Lee) |
 |             | [J194 조찬영](https://github.com/cyjo9603) |
+|             | [J082 박은식](https://github.com/qkrdmstlr3) | 
 
 
 **`기능 B 구현`**

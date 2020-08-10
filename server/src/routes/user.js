@@ -15,6 +15,7 @@ router.post('/signup', async (req, res, next) => {
       userid: id,
       userpw: hashedPassword,
       bad: false,
+      authority: false
     });
 
     const result = { result: true };
@@ -30,6 +31,7 @@ router.post('/signup', async (req, res, next) => {
 router.post('/signin', async (req, res, next) => {
   try {
     const { id, pw } = req.body;
+    console.log('server', req.body);
     const user = await User.findOne({
       where: {
         userid: id,
@@ -39,8 +41,7 @@ router.post('/signin', async (req, res, next) => {
     const isComparePassword = await bcrypt.compare(pw, user.userpw);
 
     if (isComparePassword) {
-      const result = { result: true };
-      return res.json(result);
+      return res.json(user);
     }
     return res.status(402).send('입력한 비밀번호가 맞지 않습니다.');
   } catch (error) {
