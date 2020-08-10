@@ -8,7 +8,7 @@ function attachParam(url, ...params) {
 
 function safeCheck(badwords, text){
     let url = 'http://api.adams.ai/datamixiApi/tms';    
-    const key = '8571616425836319259';
+    const key = '3674213975321081843';	//'8571616425836319259';
     const query = text;
     const lang = 'kor';
     const analysis = 'pos';
