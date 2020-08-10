@@ -1,24 +1,49 @@
-import React, { useState, useCallback } from "react";
-import useInput from './useInput'
+import React, {useState} from "react";
 import "./login.css";
+import { useHistory } from 'react-router-dom';
 
-const initState = {
-    name: "",
-    password: "",
-};
+import { signInAPI} from '../../api';
+
+import { useDispatch }  from 'react-redux';
+import * as actions from '../../redux/actions';
+
 function Login() {
-    const [{ name, password }, onChange] = useInput(initState);
+    const [id, setId] = useState('');
+    const [pw, setPW] = useState('');
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        const response = await signInAPI({
+            id, pw
+        })
+        if(response.error) return;
+        else {
+            dispatch(actions.login(response.data));
+            history.push('/mainPage');
+        }
+    }
+
     return (
         <div id="login-warpper">
             <div id="login-content">
-                <input type="text" placeholder="아이디" className="login-input"></input>
+                <input
+                    type="text" 
+                    placeholder="아이디" 
+                    className="login-input" 
+                    value={id}
+                    onChange={(e) => setId(e.target.value)}
+                />
                 <input
                     type="password"
                     placeholder="비밀번호"
                     className="login-input"
-                ></input>
-                <button className="login-button" value={name} onChange={onChange}>로그인</button>
-                <button className="login-button" value={password} onChange={onChange}>회원가입</button>
+                    value={pw}
+                    onChange={(e) => setPW(e.target.value)}
+                />
+                <button className="login-button" onClick={handleLogin}>로그인</button>
+                <button className="login-button"><a href="/signUp">회원가입</a></button>
             </div>
         </div>
     );

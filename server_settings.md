@@ -42,3 +42,11 @@ $npm run win-start // windows 환경시 서버 시작 명령어
 ```
 
 `/server`에서 다음 명령어 입력, 80번 port로 배포 서버 시작
+
+### run front server
+```bash
+$npm start
+```
+`/front`에서 다음 명령어 입력하면 프론트 서버 시작
+
+서버 두개 다 키면 정상동작할 것이다.

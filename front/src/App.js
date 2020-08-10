@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import * as Pages from "./pages";
 import "./App.css";
@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exac path="/mainPage" component={Pages.MainPage} />
-        <Route exac path="/viewText" component={Pages.ViewPage} />
+        <Route exac path="/viewText/:id" component={Pages.ViewPage} />
         <Route exac path="/signup" component={Pages.SignUpPage} />
         <Route exac path="/post" component={Pages.PostListPage} />
         <Route exac path="/write" component={Pages.WritePage} />

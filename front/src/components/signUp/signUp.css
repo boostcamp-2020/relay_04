@@ -34,7 +34,7 @@
   height: 40px;
   border-radius: 7px;
   border: none;
-  background-color: #3498DB;
+  background-color: var(--red);
   cursor: pointer;
   color: white;
   font-size: 18px;

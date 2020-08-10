@@ -30,6 +30,8 @@ userpw : varchar(250)
 
 bad : bool
 
+authority: bool
+
 
 
 ## API
@@ -70,7 +72,13 @@ id : [사용자 id] / pw : [사용자 pw]
 
 ```
 {
-    result : true(성공) / false(실패)
+    user : {
+        id
+        userid
+        userpw
+        bad
+        authority
+    }
 }
 ```
 
@@ -147,6 +155,10 @@ page : [페이지 번호] ---> 기능 보류
 
 [BASE_URL]/api/post/[게시글id]
 
+**REQUEST BODY**
+
+id : [게시글 id]
+
 **RESPONSE**
 
 ```
@@ -166,3 +178,37 @@ page : [페이지 번호] ---> 기능 보류
 }
 ```
 
+### 게시글 bad를 공개로 수정하기 (POST)
+
+**URL**
+[BASE_URL]/api/post/update/[게시글id]
+
+**REQUEST BODY**
+
+id : [게시글 id]
+
+**RESPONSE**
+
+
+```
+{
+    result : true(성공) / false(실패)
+}
+```
+
+### 게시글 삭제하기 (DELETE)
+
+**URL**
+[BASE_URL]/api/post/delete/[게시글id]
+
+**REQUEST BODY**
+
+id : [게시글 id]
+
+**RESPONSE**
+
+```
+{
+    result : true(성공) / false(실패)
+}
+```

@@ -17,10 +17,28 @@
   grid-gap: 15px;
 }
 .login-button {
-  background-color: var(--blue2);
-  border: 0;
+  width: 330px;
+  height: 40px;
+  border-radius: 7px;
+  border: none;
+  background-color: var(--red);
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  margin: 0 auto;
   /* border: 1px var(--blue6) solid; */
 }
+.login-button > a {
+  color: white;
+  text-decoration: none;
+}
+
 .login-input {
   text-indent: 10px;
+  margin: 0 auto;
+  width: 300px;
+  height: 30px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding-left: 10px;
 }
