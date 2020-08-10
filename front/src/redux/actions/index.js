@@ -22,3 +22,9 @@ export const loadPost = (post) => {
     post
   }
 }
+
+export const changePost = () => {
+  return {
+    type: postType.CHANGE_POST
+  }
+}

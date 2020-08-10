@@ -2,7 +2,8 @@ import * as types from '../actions/postType';
 
 const initialState = {
   posts: [],
-  post: {}
+  post: {},
+  flag: false // 클릭 시 페이지 리렌더링 하기 위한 장치
 }
 
 const postReducer = (state = initialState, action) => {
@@ -16,6 +17,11 @@ const postReducer = (state = initialState, action) => {
       return {
         ...state,
         post: action.post
+      }
+    case types.CHANGE_POST:
+      return {
+        ...state,
+        flag: !state.flag
       }
     default:
       return state;

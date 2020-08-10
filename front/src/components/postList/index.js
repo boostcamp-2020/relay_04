@@ -8,12 +8,13 @@ import * as actions from '../../redux/actions';
 
 import { loadPostsAPI, changeBadPost, deletePost } from '../../api';
 
-function unit({ ...data }, authority, index) {
+function unit({ ...data }, authority, index, dispatch) {
   if(data.bad && !authority) return;
 
   const handleYes = async () => {
     try{
       await changeBadPost(data.id);
+      dispatch(actions.changePost());
     }catch(error) {
       console.error(error);
       return;
@@ -23,6 +24,7 @@ function unit({ ...data }, authority, index) {
   const handleNo = async () => {
     try {
       await deletePost(data.id);
+      dispatch(actions.changePost());
     } catch(error) {
       console.error(error);
       return;
@@ -44,9 +46,9 @@ function unit({ ...data }, authority, index) {
     </div>
   )
 }
-function Bulletin({ list, authority }) {
+function Bulletin({ list, authority, dispatch }) {
   return list.map((data, index) => {
-    return unit(data, authority, index);
+    return unit(data, authority, index, dispatch);
   })
 }
 function ListTitle() {
@@ -60,7 +62,7 @@ function ListTitle() {
 
 function PostList() {
   const { authority } = useSelector((state) => state.user.user);
-  const { posts } = useSelector((state) => state.post);
+  const { posts, flag } = useSelector((state) => state.post);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -70,13 +72,13 @@ function PostList() {
       return response.data;
     }
     fetchData();
-  }, [dispatch])
+  }, [dispatch, flag]);
 
   return (
     <TempTaplate>
       <div id="postList-warpper">
         <ListTitle />
-        <Bulletin list={posts} authority={authority}/>
+        <Bulletin list={posts} authority={authority} dispatch={dispatch}/>
         <button className='postList-button postList-write-button'><Link to="/write">글작성</Link></button>
         <Pagenation lastPage={10} currentPage={1} />
       </div>
