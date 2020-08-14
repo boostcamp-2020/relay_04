@@ -7,6 +7,8 @@ import { signInAPI} from '../../api';
 import { useDispatch }  from 'react-redux';
 import * as actions from '../../redux/actions';
 
+import { Route, Link } from "react-router-dom";
+
 function Login() {
     const [id, setId] = useState('');
     const [pw, setPW] = useState('');
@@ -44,6 +46,7 @@ function Login() {
                 />
                 <button className="login-button" onClick={handleLogin}>로그인</button>
                 <button className="login-button"><a href="/signUp">회원가입</a></button>
+                <button className="login-button"><a href="/findUser">사람 찾기</a></button>
             </div>
         </div>
     );
