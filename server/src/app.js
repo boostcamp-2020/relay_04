@@ -9,6 +9,7 @@ const dotenv = require('dotenv');
 const userAPIRouter = require('./routes/user');
 const postsAPIRouter = require('./routes/posts');
 const postAPIRouter = require('./routes/post');
+const imageAPIRouter = require('./routes/image');
 
 const prod = process.env.NODE_ENV === 'production';
 
@@ -58,6 +59,7 @@ class App {
     this.app.use('/api/user', userAPIRouter);
     this.app.use('/api/posts', postsAPIRouter);
     this.app.use('/api/post', postAPIRouter);
+    this.app.use('/api/image', imageAPIRouter);
   }
 }
 

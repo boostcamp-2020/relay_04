@@ -1,92 +1,95 @@
-import axios from 'axios'
+import axios from "axios";
 
-const URL = 'http://localhost:4000'
+const URL = "http://localhost:4000";
 
-export const signInAPI = async ({id, pw}) => {
-    try{
-        const response = await axios.post(`${URL}/api/user/signin`, {
-            id,
-            pw
-        })
-        return response;
-    } catch(error) {
-        return {error}
-    }
-}
+export const signInAPI = async ({ id, pw }) => {
+  try {
+    const response = await axios.post(`${URL}/api/user/signin`, {
+      id,
+      pw,
+    });
+    return response;
+  } catch (error) {
+    return { error };
+  }
+};
 
-export const signUpAPI = async ({id, pw}) => {
-    try{
-        const response = await axios.post(`${URL}/api/user/signup`, {
-            id,
-            pw
-        })
+export const signUpAPI = async ({ id, pw }) => {
+  try {
+    const response = await axios.post(`${URL}/api/user/signup`, {
+      id,
+      pw,
+    });
 
-        return response;
-    } catch(error) {
-        return {error}
-    }
-}
+    return response;
+  } catch (error) {
+    return { error };
+  }
+};
 
-export const writePostAPI = async({id, title, content}) => {
-    try{
-        const response = await axios.post(`${URL}/api/post/write`, {
-            userid: id,
-            title,
-            content
-        });
+export const writePostAPI = async ({ id, title, content }) => {
+  try {
+    const response = await axios.post(`${URL}/api/post/write`, {
+      userid: id,
+      title,
+      content,
+    });
 
-        return response;
-    } catch( error ) {
-        return { error }
-    }
-}
+    return response;
+  } catch (error) {
+    return { error };
+  }
+};
 
-export const loadPostsAPI = async() => {
-    try {
-        const response = await axios.get(`${URL}/api/posts`);
-        return response;
-    } catch(error) {
-        return {error}
-    }
-}
+export const loadPostsAPI = async () => {
+  try {
+    const response = await axios.get(`${URL}/api/posts`);
+    return response;
+  } catch (error) {
+    return { error };
+  }
+};
 
-export const loadPostAPI = async(id) => {
-    try{
-        const response = await axios.get(`${URL}/api/post/${id}`);
+export const loadPostAPI = async (id) => {
+  try {
+    const response = await axios.get(`${URL}/api/post/${id}`);
 
-        return response;
-    }catch(error){
-        return {error}
-    }
-}
+    return response;
+  } catch (error) {
+    return { error };
+  }
+};
 
 export const changeBadPost = async (id) => {
-    try {
-        const response = await axios.post(`${URL}/api/post/update/${id}`,{
-            id
-        });
+  try {
+    const response = await axios.post(`${URL}/api/post/update/${id}`, {
+      id,
+    });
 
-        return response;
-    } catch(error) {
-        return {error}
-    }
-}
+    return response;
+  } catch (error) {
+    return { error };
+  }
+};
 
 export const deletePost = async (id) => {
-    try {
-        const response = await axios.delete(`${URL}/api/post/${id}`, { params: {id} })
-        return response;
-    } catch(error) {
-        return {error}
-    }
-}
+  try {
+    const response = await axios.delete(`${URL}/api/post/${id}`, {
+      params: { id },
+    });
+    return response;
+  } catch (error) {
+    return { error };
+  }
+};
 
 export const postFaceDetection = async (image) => {
-    try {
-        const response = await axios.post(`${URL}/api/image`, { data: {image} })
-        return response
-    } catch (e) {
-        console.log(e)
-        return e
-    }
-}
+  try {
+    const formData = new FormData();
+    formData.append("image", image);
+    const response = await axios.post(`${URL}/api/image`, formData);
+  } catch (e) {
+    console.log(e);
+    return e;
+  }
+};
