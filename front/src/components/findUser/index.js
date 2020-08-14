@@ -2,7 +2,7 @@ import './findUser.css';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { writePostAPI } from '../../api';
+import { postFaceDetection } from '../../api';
 
 import { useSelector } from 'react-redux';
 
@@ -21,7 +21,7 @@ function FindUser(){
         
     }
     const callApi = () => {
-        console.log(imageParams)
+        postFaceDetection(imageParams)
     }
     
     
