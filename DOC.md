@@ -212,3 +212,31 @@ id : [게시글 id]
     result : true(성공) / false(실패)
 }
 ```
+
+
+
+### 얼굴 인식 요청 보내기 (POST)
+
+**URL**
+
+[BASE_URL]/api/image/
+
+**REQUEST BODY**
+
+```json
+// formData
+{
+    image : imageFile 
+}
+```
+
+**RESPONSE**
+
+```json
+{
+  rois: [
+    { x: x, y: y, width: width, height: heigth },
+  ]
+}
+```
+
