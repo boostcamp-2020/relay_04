@@ -49,7 +49,6 @@
 [J116 오정석](https://github.com/o-star) | [J119 오해성](https://github.com/ohsolution) | [J117 오지현](https://github.com/joh16)
 [J118 오지훈](https://github.com/hoo00nn) | | [J120 우승윤](https://github.com/woosy0308)
 
-
 **`기능 A 구현`**
 
 | Frontend    | Backend     |
@@ -61,10 +60,15 @@
 |             | [J119 오해성](https://github.com/ohsolution) |
 |             | [J157 이주현](https://github.com/JuHyeon-Lee) |
 |             | [J194 조찬영](https://github.com/cyjo9603) |
-|             | [J082 박은식](https://github.com/qkrdmstlr3) | 
-
+|             | [J082 박은식](https://github.com/qkrdmstlr3) |
 
 **`기능 B 구현`**
+
+| 업로드 버튼                                   | 이미지 파일 전송                            | 머신러닝 API                                      | 머신러닝 결과 처리(사진)                         |
+| --------------------------------------------- | ------------------------------------------- | ------------------------------------------------- | ------------------------------------------------ |
+| [J014_권순원](https://github.com/grap3fruit/) | [J109_안샛별](https://github.com/sbyeol3)   | [J192_조정혜](https://github.com/Jeonghae10)      | [J057_김태은](https://github.com/taenykim)       |
+| [J029_김도연](https://github.com/do02reen24)  | [J219_황병현](https://github.com/qudgus21)  | [J054_김진관](https://github.com/kkole3897)       | [J086_박주영](https://github.com/juyoungpark718) |
+| [J139_이상경](https://github.com/sang-gyeong) | [J213_하지수](https://github.com/JeesooHaa) | [J177_장준호](https://gist.github.com/CHANGJUNHO) | [J164_이청명](https://github.com/chmylee)        |
 
 **`기능 C 구현`**
 
