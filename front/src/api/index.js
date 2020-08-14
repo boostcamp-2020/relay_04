@@ -83,9 +83,10 @@ export const deletePost = async (id) => {
 
 export const postFaceDetection = async (image) => {
     try {
-        const response = await axios.post(`${URL}/api/post/image`, { data: {image} })
+        const response = await axios.post(`${URL}/api/image`, { data: {image} })
+        return response
     } catch (e) {
-        console.log(e);
-        return e;
+        console.log(e)
+        return e
     }
 }
