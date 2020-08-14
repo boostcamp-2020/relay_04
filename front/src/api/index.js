@@ -73,13 +73,19 @@ export const changeBadPost = async (id) => {
 }
 
 export const deletePost = async (id) => {
-    try{
-        const response = await axios.delete(`${URL}/api/post/${id}`, {
-            id
-        })
-
+    try {
+        const response = await axios.delete(`${URL}/api/post/${id}`, { params: {id} })
         return response;
     } catch(error) {
         return {error}
+    }
+}
+
+export const postFaceDetection = async (image) => {
+    try {
+        const response = await axios.post(`${URL}/api/post/image`, { data: {image} })
+    } catch (e) {
+        console.log(e);
+        return e;
     }
 }
