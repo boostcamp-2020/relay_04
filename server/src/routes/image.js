@@ -7,7 +7,7 @@ const client_secret = '0IbAFpspzC4ho6WPVLWPIzugDsmpgOZSr7wjf8gh';
 const express = require('express');
 const multer = require('multer');
 const upload = multer({
-  dest: '../img',
+  dest: 'img/',
 });
 const router = express.Router();
 const request = require('request');
