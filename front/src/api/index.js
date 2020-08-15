@@ -88,6 +88,7 @@ export const postFaceDetection = async (image) => {
     const formData = new FormData();
     formData.append("image", image);
     const response = await axios.post(`${URL}/api/image`, formData);
+    return response.data;
   } catch (e) {
     console.log(e);
     return e;
