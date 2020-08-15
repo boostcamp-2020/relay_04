@@ -7,7 +7,7 @@ const client_secret = '0IbAFpspzC4ho6WPVLWPIzugDsmpgOZSr7wjf8gh';
 const express = require('express');
 const multer = require('multer');
 const upload = multer({
-  dest: '../../img',
+  dest: '../img',
 });
 const router = express.Router();
 const request = require('request');
@@ -25,10 +25,11 @@ function parse(res) {
 router.post('/', upload.single('image'), async (req, res, next) => {
   try {
     const api_url = 'https://naveropenapi.apigw.ntruss.com/vision/v1/face'; // 얼굴 감지
+    const path = req.file.path;
 
     const _formData = {
       image: 'image',
-      image: fs.createReadStream(req.file.path), // FILE 이름
+      image: fs.createReadStream(path), // FILE 이름
     };
 
     const _req = request.post(
@@ -40,6 +41,9 @@ router.post('/', upload.single('image'), async (req, res, next) => {
       },
       function (err, req, body) {
         res.json(parse(body));
+        fs.unlink(path, (err) => {
+          if (err) throw err;
+        });
       },
     );
   } catch (error) {
