@@ -16,6 +16,9 @@
 ### [B. 영상 처리](https://github.com/boostcamp-2020/relay_04/blob/master/planning/Feature_B.md)
 🗣 **동창들이 같이 찍은 사진에서 인물 태그를 자동으로 생성하는 기능**
 
+테스트 URL : http://49.50.164.198:3000/
+(소감 넣어주세요..)
+
 #### :heavy_check_mark: 3주차 Check Point
 
 - [x] **사람 찾기 버튼 동작 (로그인, 회원가입은 안돼요 ㅠ)**
