@@ -70,9 +70,9 @@ router.post('/write', async (req, res, next) => {
     const { userid, title, content } = req.body;
     const testBadwords = ['멍멍', '왈왈', '씨발', '병신'];
 
-    const bad = false;
+    //const bad = false;
     // api 사용제한 때문에 막아놓음
-    //const bad = safeCheck(testBadwords, content) > 0 ? true : false;
+    const bad = safeCheck(testBadwords, content) > 0 ? true : false;
 
     await Post.create({
       title,
