@@ -23,6 +23,8 @@
 - [x] **이미지 업로드 동작**
 - [x] **찾기 버튼 동작**
 - [x] **사람 얼굴 인식 성공**
+- [x] **인식된 박스를 클릭하고 이름 입력 후 엔터 시 태깅**
+- [x] **오른쪽 클릭을 통해 다른이름으로 저장**
     
                                      
 ### [C. 테이블 데이터](https://github.com/boostcamp-2020/relay_04/blob/master/planning/Feature_C.md)
