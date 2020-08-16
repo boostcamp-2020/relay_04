@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 
 function FindUser() {
   const [image, setImage] = useState(null); // read
+  const [imageInfo, setImageInfo] = useState(null);
   const [imageParams, setImageParams] = useState(null); // read
   const [datas, setDatas] = useState(null);
   const [check, setCheck] = useState(false);
@@ -26,20 +27,31 @@ function FindUser() {
   const drawText = (inputValue) => {
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
-    ctx.fillStyle = "red";
-    ctx.font = "20px Arial";
+    ctx.fillStyle = "white";
+    ctx.strokeStyle = "green";
+    ctx.lineWidth = 4;
+    ctx.font = "32px Arial";
+    ctx.strokeText(inputValue, check.x, check.y - 2);
     ctx.fillText(inputValue, check.x, check.y - 2);
   };
 
   useEffect(() => {
+    const MAX_WIDTH = 400;
+    const MAX_HEIGHT = 300;
     console.log(datas);
     if (datas) {
       const canvas = document.getElementById("canvas");
       drawImage(canvas, datas, image);
       canvas.addEventListener("mousemove", (e) => {
         for (const index in datas) {
-          if (e.offsetX > datas[index].x && e.offsetX < datas[index].x + datas[index].width) {
-            if (e.offsetY > datas[index].y && e.offsetY < datas[index].y + datas[index].height) {
+          if (
+            e.offsetX > (datas[index].x * MAX_WIDTH) / imageInfo.width &&
+            e.offsetX < ((datas[index].x + datas[index].width) * MAX_WIDTH) / imageInfo.width
+          ) {
+            if (
+              e.offsetY > (datas[index].y * MAX_HEIGHT) / imageInfo.height &&
+              e.offsetY < ((datas[index].y + datas[index].height) * MAX_HEIGHT) / imageInfo.height
+            ) {
               return (canvas.style.cursor = "pointer");
             }
           }
@@ -49,8 +61,14 @@ function FindUser() {
       canvas.addEventListener("mousedown", (e) => {
         setCheck(false);
         for (const index in datas) {
-          if (e.offsetX > datas[index].x && e.offsetX < datas[index].x + datas[index].width) {
-            if (e.offsetY > datas[index].y && e.offsetY < datas[index].y + datas[index].height) {
+          if (
+            e.offsetX > (datas[index].x * MAX_WIDTH) / imageInfo.width &&
+            e.offsetX < ((datas[index].x + datas[index].width) * MAX_WIDTH) / imageInfo.width
+          ) {
+            if (
+              e.offsetY > (datas[index].y * MAX_HEIGHT) / imageInfo.height &&
+              e.offsetY < ((datas[index].y + datas[index].height) * MAX_HEIGHT) / imageInfo.height
+            ) {
               setCheck(datas[index]);
               datas.splice(index, 1);
             }
@@ -68,7 +86,12 @@ function FindUser() {
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = () => {
+      const image = new Image();
       const base64 = reader.result;
+      image.src = base64;
+      image.onload = () => {
+        setImageInfo({ width: image.width, height: image.height });
+      };
       if (base64) setImage(base64);
     };
   };
@@ -79,30 +102,28 @@ function FindUser() {
 
   return (
     <div>
-      {datas ? (
-        <canvas id="canvas"></canvas>
-      ) : (
-        <div className="find-user-box">
-          <p className="guide-message">찾고 싶은 사람의 이미지를 등록해주세요!</p>
-          <img className="find-user-img" src={image} />
-          <input type="file" onChange={handleChangeImg} />
-          {image && (
-            <button className="upload-button" onClick={callApi}>
-              찾기
-            </button>
-          )}
-        </div>
-      )}
-      {check ? (
-        <div>
-          이름을 입력하세요
-          <form onSubmit={submitHandler}>
-            <input onChange={inputValueHandler}></input>
-          </form>
-        </div>
-      ) : (
-        <div>{check}</div>
-      )}
+      <div className="find-user-box">
+        <p className="guide-message">
+          {datas ? "결과화면(박스를 클릭해 이름을 태그해주세요!)" : "찾고 싶은 사람의 이미지를 등록해주세요!"}
+        </p>
+        {datas ? <canvas className="find-user-img" id="canvas"></canvas> : <img className="find-user-img" src={image} />}
+        {!datas && <input type="file" onChange={handleChangeImg} />}
+        {!datas && image && (
+          <button className="upload-button" onClick={callApi}>
+            찾기
+          </button>
+        )}
+        {datas && check ? (
+          <div>
+            이름을 입력하세요
+            <form onSubmit={submitHandler}>
+              <input onChange={inputValueHandler}></input>
+            </form>
+          </div>
+        ) : (
+          <div>{check}</div>
+        )}
+      </div>
     </div>
   );
 }
